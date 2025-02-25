@@ -1,0 +1,28 @@
+name: Tests Jest
+    on:
+      push:
+        branches: [ main ]
+      pull_request:
+        branches: [ main ]
+
+    jobs:
+      test:
+        runs-on: ubuntu-latest
+        steps:
+          - uses: actions/checkout@v3
+          - name: Utiliser Node.js 18
+            uses: actions/setup-node@v3
+            with:
+              node-version: '18'
+          - name: Installer les Dépendances
+            run: npm install
+          - name: Lancer les Tests Jest
+            run: npm test -- --ci --reporters=default --reporters=jest-junit
+            env:
+              CI: true
+          - name: Télécharger les résultats des tests Jest
+            uses: actions/upload-artifact@v3
+            if: always()
+            with:
+              name: jest-results
+              path: junit.xml
