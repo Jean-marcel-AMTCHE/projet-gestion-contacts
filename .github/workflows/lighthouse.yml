@@ -1,0 +1,26 @@
+name: Audit Lighthouse
+
+        on:
+          push:
+            branches: [main]
+          pull_request:
+            branches: [main]
+
+        jobs:
+          lighthouse:
+            runs-on: ubuntu-latest
+            steps:
+              - uses: actions/checkout@v3
+              - name: Utiliser Node.js 18
+                uses: actions/setup-node@v3
+                with:
+                  node-version: '18'
+              - name: Installer les dépendances
+                run: npm install
+              - name: Lancer Lighthouse CI
+                uses: treosh/lighthouse-ci-action@v9
+                with:
+                  urls: ['http://localhost:3000'] 
+                  configPath: '.github/lighthouse/lighthouserc.js' 
+                  uploadArtifacts: true 
+                  temporaryPublicStorage: true 

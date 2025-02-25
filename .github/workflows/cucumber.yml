@@ -1,0 +1,40 @@
+name: Tests Cucumber
+
+    on:
+      push:
+        branches: [main]
+      pull_request:
+        branches: [main]
+
+    jobs:
+      cucumber-tests:
+        runs-on: ubuntu-latest
+
+        steps:
+          - name: Cloner le dépôt
+            uses: actions/checkout@v3
+
+          - name: Configurer Node.js
+            uses: actions/setup-node@v3
+            with:
+              node-version: 18
+
+          - name: Installer les dépendances
+            run: npm install
+
+          - name: Lancer les tests Cucumber
+            run: npm run cucumber 
+
+          - name: Générer un rapport Cucumber
+            if: always() 
+            run: |
+              npm install cucumber-html-reporter --save-dev
+              node generate-cucumber-report.js 
+
+          - name: Télécharger le rapport HTML Cucumber
+            uses: actions/upload-artifact@v3
+            if: always()
+            with:
+              name: cucumber-report
+              path: cucumber_report.html
+              retention-days: 7
