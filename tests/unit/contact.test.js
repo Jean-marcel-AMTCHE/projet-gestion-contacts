@@ -1,4 +1,4 @@
-const { validateContact } = require('../../src/app.js'); // Ajustez le chemin si nécessaire
+const { validateContact } = require('../../src/app.js'); 
 
     describe('Validation du Contact', () => {
         it('devrait valider un email valide', () => {

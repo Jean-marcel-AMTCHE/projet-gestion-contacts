@@ -24,7 +24,7 @@ const contactTable = document.getElementById('contactTable').getElementsByTagNam
     async function saveContacts() {
         try {
             const response = await fetch('contacts.json', {
-                method: 'PUT', // Ou PATCH selon votre configuration de serveur
+                method: 'PUT', 
                 headers: {
                     'Content-Type': 'application/json'
                 },
@@ -66,7 +66,7 @@ const contactTable = document.getElementById('contactTable').getElementsByTagNam
             return;
         }
 
-        const id = contactIdInput.value ? parseInt(contactIdInput.value) : Date.now(); // Génération simple d'ID
+        const id = contactIdInput.value ? parseInt(contactIdInput.value) : Date.now(); 
         const newContact = {
             id: id,
             nom: nameInput.value,
@@ -81,7 +81,7 @@ const contactTable = document.getElementById('contactTable').getElementsByTagNam
             if (index !== -1) {
                 contacts[index] = newContact;
             }
-            contactIdInput.value = ''; // Effacer l'input hidden
+            contactIdInput.value = ''; 
         } else {
             // Ajouter un nouveau contact
             contacts.push(newContact);
