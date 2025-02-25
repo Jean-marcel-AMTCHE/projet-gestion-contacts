@@ -1,10 +1,10 @@
 const { Given, When, Then } = require('cucumber');
         const assert = require('assert');
         const { By, until } = require('selenium-webdriver');
-        const { driver } = require('./webdriver'); // En supposant que vous avez une configuration webdriver
+        const { driver } = require('./webdriver'); 
 
         Given('Je suis sur la page de gestion des contacts', async function () {
-            await driver.get('http://localhost:3000'); // Ajustez l'URL au besoin
+            await driver.get('http://localhost:3000'); 
         });
 
         When('Je remplis le formulaire avec des données valides', async function () {
@@ -25,8 +25,8 @@ const { Given, When, Then } = require('cucumber');
         });
 
         Given('J\'ai un contact dans la liste', async function () {
-            // Assurez-vous qu'il y a au moins un contact, ajoutez-en un si nécessaire
-            // Cette partie dépendra de la façon dont vous initialisez les données
+           
+            
         });
 
         When('Je clique sur "Supprimer" pour ce contact', async function () {
@@ -34,15 +34,15 @@ const { Given, When, Then } = require('cucumber');
         });
 
         Then('Je suis invité à confirmer la suppression', async function () {
-            // Vérifiez la présence d'une boîte de dialogue de confirmation (alerte du navigateur)
+            
             const alert = await driver.switchTo().alert();
-            assert.ok(alert != null); // Vérifiez si l'alerte est présente
-            // Facultativement : Stockez l'alerte pour une interaction ultérieure
-            this.alert = alert; // Stockez l'alerte dans le contexte 'this' pour y accéder plus tard
+            assert.ok(alert != null); 
+            
+            this.alert = alert; 
         });
 
         When('Je confirme la suppression', async function () {
-            // Acceptez l'alerte si elle existe
+            
             if (this.alert) {
                 await this.alert.accept();
             } else {
@@ -52,7 +52,7 @@ const { Given, When, Then } = require('cucumber');
 
         Then('Le contact est supprimé de la liste', async function () {
             try {
-                // Vérifiez que le contact n'est plus présent dans la liste
+                
                 await driver.wait(until.stalenessOf(driver.findElement(By.xpath("//table[@id='contactTable']/tbody/tr/td[text()='John']"))), 10000);
                 console.log("Le contact a été supprimé avec succès.");
             } catch (error) {
