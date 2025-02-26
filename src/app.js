@@ -1,4 +1,6 @@
-// Sélection des éléments HTML
+// src/app.js
+
+// Sélection des éléments HTML (garde ça comme c'est)
 const contactTable = document.getElementById('contactTable')?.getElementsByTagName('tbody')[0];
 const contactForm = document.getElementById('contactForm');
 const contactIdInput = document.getElementById('contactId');
@@ -17,7 +19,7 @@ function validateContact(contact) {
     if (!contact.nom || !contact.prenom || !contact.telephone || !contact.email) return false;
 
     // Vérification de la validité de l'email
-    const emailPattern = /\S+@\S+\.\S+/;
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
     return emailPattern.test(contact.email);
 }
 
@@ -40,7 +42,7 @@ async function loadContacts() {
 async function saveContacts() {
     try {
         const response = await fetch('contacts.json', {
-            method: 'PUT',
+            method: 'PUT', // Utilisez PUT pour remplacer le fichier entier
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(contacts)
         });
@@ -91,6 +93,11 @@ function addContact(event) {
         email: emailInput?.value
     };
 
+    if (!validateContact(newContact)) {  // Validation ici
+        alert("Veuillez fournir des informations de contact valides.");
+        return;
+    }
+
     if (contactIdInput?.value) {
         const index = contacts.findIndex(c => c.id === newContact.id);
         if (index !== -1) {
@@ -140,3 +147,4 @@ if (typeof window !== 'undefined') {
 
 // Exporter les fonctions pour les tests
 module.exports = { validateContact };
+
