@@ -1,4 +1,3 @@
-// playwright.config.js
 /** @type {import('@playwright/test').PlaywrightTestConfig} */
 const config = {
     testDir: './tests', // Indique le répertoire où se trouvent les tests
@@ -26,8 +25,13 @@ const config = {
         },
       },
     ],
+    reporter: [
+      // Génère un rapport HTML dans le dossier 'playwright-report'
+      ['html', { outputFolder: 'playwright-report', open: 'always' }],
+      // Génère un rapport JSON pour un traitement ultérieur
+      ['json', { outputFile: 'playwright-report.json' }],
+    ],
   };
   
   module.exports = config;
-  
   

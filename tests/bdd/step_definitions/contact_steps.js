@@ -4,7 +4,7 @@ const { Given, When, Then } = require('cucumber');
         const { driver } = require('./webdriver'); 
 
         Given('Je suis sur la page de gestion des contacts', async function () {
-            await driver.get('http://localhost:3000'); 
+            await driver.get('http://localhost:57608'); 
         });
 
         When('Je remplis le formulaire avec des données valides', async function () {

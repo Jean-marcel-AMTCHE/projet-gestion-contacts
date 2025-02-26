@@ -1,0 +1,329 @@
+{
+  "config": {
+    "configFile": "C:\\Users\\user\\Documents\\MA CLASSE\\AUTOMNE 2024\\TEST\\projet-gestion-contacts\\playwright.config.js",
+    "rootDir": "C:/Users/user/Documents/MA CLASSE/AUTOMNE 2024/TEST/projet-gestion-contacts/tests",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 3
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        {
+          "outputFolder": "playwright-report",
+          "open": "always"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "playwright-report.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 15000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "C:/Users/user/Documents/MA CLASSE/AUTOMNE 2024/TEST/projet-gestion-contacts/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "C:/Users/user/Documents/MA CLASSE/AUTOMNE 2024/TEST/projet-gestion-contacts/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.spec.js"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/user/Documents/MA CLASSE/AUTOMNE 2024/TEST/projet-gestion-contacts/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "C:/Users/user/Documents/MA CLASSE/AUTOMNE 2024/TEST/projet-gestion-contacts/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.spec.js"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/user/Documents/MA CLASSE/AUTOMNE 2024/TEST/projet-gestion-contacts/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "C:/Users/user/Documents/MA CLASSE/AUTOMNE 2024/TEST/projet-gestion-contacts/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.spec.js"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.50.1",
+    "workers": 6,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "e2e\\contact.spec.js",
+      "file": "e2e/contact.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Ajouter un nouveau contact",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 461,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-02-26T04:11:08.126Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2d1dea62b6d98c8ed4ed-f3c0ac5fcfee075ac784",
+          "file": "e2e/contact.spec.js",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "Supprimer un contact",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 325,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Nombre de lignes avant la suppression: 1\n"
+                    },
+                    {
+                      "text": "Dialog message: Êtes-vous sûr de vouloir supprimer ce contact ?\n"
+                    },
+                    {
+                      "text": "Nombre de lignes après la suppression: 0\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-02-26T04:11:08.705Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2d1dea62b6d98c8ed4ed-59eed2245900aba60a7d",
+          "file": "e2e/contact.spec.js",
+          "line": 37,
+          "column": 1
+        },
+        {
+          "title": "Ajouter un nouveau contact",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "status": "passed",
+                  "duration": 1542,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-02-26T04:11:08.116Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2d1dea62b6d98c8ed4ed-d8cb85e1adc429ef7872",
+          "file": "e2e/contact.spec.js",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "Supprimer un contact",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "status": "passed",
+                  "duration": 600,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Nombre de lignes avant la suppression: 1\n"
+                    },
+                    {
+                      "text": "Dialog message: Êtes-vous sûr de vouloir supprimer ce contact ?\n"
+                    },
+                    {
+                      "text": "Nombre de lignes après la suppression: 0\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-02-26T04:11:10.401Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2d1dea62b6d98c8ed4ed-93a9db17a9118277d5e4",
+          "file": "e2e/contact.spec.js",
+          "line": 37,
+          "column": 1
+        },
+        {
+          "title": "Ajouter un nouveau contact",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "status": "passed",
+                  "duration": 764,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-02-26T04:11:08.124Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2d1dea62b6d98c8ed4ed-da75524aa071840e23ce",
+          "file": "e2e/contact.spec.js",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "Supprimer un contact",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "status": "passed",
+                  "duration": 917,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "Nombre de lignes avant la suppression: 1\n"
+                    },
+                    {
+                      "text": "Dialog message: Êtes-vous sûr de vouloir supprimer ce contact ?\n"
+                    },
+                    {
+                      "text": "Nombre de lignes après la suppression: 0\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-02-26T04:11:08.959Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2d1dea62b6d98c8ed4ed-88ae7d49b1a5d2e756c9",
+          "file": "e2e/contact.spec.js",
+          "line": 37,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-02-26T04:11:07.391Z",
+    "duration": 4212.362,
+    "expected": 6,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}
